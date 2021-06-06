@@ -1,17 +1,15 @@
-const fs = require('fs')
 
-// const textIn = fs.readFileSync('./input.txt', 'utf-8')
-// console.log(textIn)
 
-// const textOut = `This s what we know about he avocado: ${textIn}.\nCreated on ${Date.now()}`;
-// fs.writeFileSync('./output.txt', textOut);
-// console.log('File written')
+//1. import required modules and framework
 
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 // const app = require('./app.js');
+
+
+// 2. Connect to the database 
 
 dotenv.config({ path: './config.env' })
 
@@ -20,7 +18,6 @@ const DB = process.env.DATABASE.replace(
     process.env.DATABASE_PASSWORD
 );
 
-
 mongoose.connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -28,13 +25,15 @@ mongoose.connect(DB, {
     useUnifiedTopology: true
 }).then(() => console.log("DB connection succesful!"))
 
+//3. Create Port 
+
 const port = process.env.PORT || 3000;
-// const port = 3000 
 
 app.listen(port, () => {
     console.log(`App running on port ${port}...`)
 });
 
+//4. Create Schema
 
 const tourSchema = new mongoose.Schema({
     name: {
@@ -53,8 +52,9 @@ const tourSchema = new mongoose.Schema({
     }
 });
 
-const Tour = mongoose.model('Tour', tourSchema)
+//5. Create Model, add new instance in collection and save 
 
+const Tour = mongoose.model('Tour', tourSchema)
 
 const testTour = new Tour({
     name: 'The Forest Hiker',
