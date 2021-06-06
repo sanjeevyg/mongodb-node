@@ -27,9 +27,43 @@ mongoose.connect(DB, {
     useFindAndModify: false,
     useUnifiedTopology: true
 }).then(() => console.log("DB connection succesful!"))
+
 const port = process.env.PORT || 3000;
 // const port = 3000 
 
 app.listen(port, () => {
     console.log(`App running on port ${port}...`)
 });
+
+
+const tourSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: [true, 'A tour must have a price'],
+        unique: true
+    }, 
+    rating: {
+        type: Number, 
+        unique: true,
+        default: 4.5
+    }, 
+    price: {
+        type: Number, 
+        required: true
+    }
+});
+
+const Tour = mongoose.model('Tour', tourSchema)
+
+
+const testTour = new Tour({
+    name: 'The Forest Hiker',
+    price: 500,
+    rating: 5
+})
+
+testTour.save().then(doc => {
+    console.log(doc)
+}).catch(error => {
+    console.log({error: error.message})
+})
