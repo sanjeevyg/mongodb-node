@@ -18,6 +18,8 @@ const DB = process.env.DATABASE.replace(
     process.env.DATABASE_PASSWORD
 );
 
+
+
 mongoose.connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -51,3 +53,20 @@ testTour.save().then(doc => {
 }).catch(error => {
     console.log({error: error.message})
 })
+
+
+//6. Routes
+
+app.get('/api/v1/tours', (request, response) => {
+    database('users')
+        .select()
+        .returning('*')
+        .then(tours => {
+            response.json({tours})
+        }).catch(error => {
+            console.error({error: error.message})
+        })
+
+    
+})
+
