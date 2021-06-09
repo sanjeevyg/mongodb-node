@@ -70,3 +70,16 @@ app.get('/api/v1/tours', (request, response) => {
     
 })
 
+app.get('/api/v1/tours', (request, response) => {
+    database('users')
+        .select()
+        .returning('*')
+        .then(tours => {
+            response.json({tours})
+        }).catch(error => {
+            console.error({error: error.message})
+        })
+
+    
+})
+
