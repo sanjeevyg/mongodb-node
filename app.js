@@ -10,13 +10,13 @@ mongoose.connect =
 // const port = 3000
 
 
-// app.get('/', (request, response) => {
-//     response.send('We are home!')
-// })
+app.get('/', (request, response) => {
+    response.send('We are home!')
+})
 
-// app.get('/posts', (request, response) => {
-//     response.send('We are on post!')
-// })
+app.get('/posts', (request, response) => {
+    response.send('We are on post!')
+})
 
 
 // app.listen(3000, () => {
