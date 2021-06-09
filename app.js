@@ -19,9 +19,9 @@ app.get('/posts', (request, response) => {
 })
 
 
-// app.listen(3000, () => {
-//     console.log(`listening to port ${port}`)
-// })
+app.listen(3000, () => {
+    console.log(`listening to port ${port}`)
+})
 
 
 
