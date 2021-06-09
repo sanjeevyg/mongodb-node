@@ -40,10 +40,10 @@ const password = mC7yuJBnxiMXpF20
 // mongodb+srv://yogi:<password>@cluster0.7c31p.mongodb.net/test
 
 
-// const fs = require('fs')
+const fs = require('fs')
 
-// const textIn = fs.readFileSync('./input.txt', 'utf-8')
-// console.log(textIn)
+const textIn = fs.readFileSync('./input.txt', 'utf-8')
+console.log(textIn)
 
 // const textOut = `This s what we know about he avocado: ${textIn}.\nCreated on ${Date.now()}`;
 // fs.writeFileSync('./output.txt', textOut);
