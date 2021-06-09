@@ -35,7 +35,7 @@ client.connect(err => {
 });
 
 
-// const password = mC7yuJBnxiMXpF20
+const password = mC7yuJBnxiMXpF20
 
 // mongodb+srv://yogi:<password>@cluster0.7c31p.mongodb.net/test
 
