@@ -19,32 +19,32 @@ app.get('/posts', (request, response) => {
 })
 
 
-app.listen(3000, () => {
-    console.log(`listening to port ${port}`)
-})
+// app.listen(3000, () => {
+//     console.log(`listening to port ${port}`)
+// })
 
 
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://yogi:mC7yuJBnxiMXpF20@cluster0.nen5a.mongodb.net/node-mongodb-05-Jun-21?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://yogi:mC7yuJBnxiMXpF20@cluster0.nen5a.mongodb.net/node-mongodb-05-Jun-21?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 
-const password = mC7yuJBnxiMXpF20
+// const password = mC7yuJBnxiMXpF20
 
-// mongodb+srv://yogi:<password>@cluster0.7c31p.mongodb.net/test
+// // mongodb+srv://yogi:<password>@cluster0.7c31p.mongodb.net/test
 
 
-const fs = require('fs')
+// const fs = require('fs')
 
-const textIn = fs.readFileSync('./input.txt', 'utf-8')
-console.log(textIn)
+// const textIn = fs.readFileSync('./input.txt', 'utf-8')
+// console.log(textIn)
 
-const textOut = `This s what we know about he avocado: ${textIn}.\nCreated on ${Date.now()}`;
-fs.writeFileSync('./output.txt', textOut);
-console.log('File written')
+// const textOut = `This s what we know about he avocado: ${textIn}.\nCreated on ${Date.now()}`;
+// fs.writeFileSync('./output.txt', textOut);
+// console.log('File written')
