@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-// const mongoose = require('mongoose');
-// mongoose.connect = 
+const mongoose = require('mongoose');
+mongoose.connect = 
 
 // app.use('/posts', () => {
 //     console.log('This is a middleware running!')
