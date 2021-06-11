@@ -25,14 +25,14 @@ app.get('/posts', (request, response) => {
 
 
 
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://yogi:mC7yuJBnxiMXpF20@cluster0.nen5a.mongodb.net/node-mongodb-05-Jun-21?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://yogi:mC7yuJBnxiMXpF20@cluster0.nen5a.mongodb.net/node-mongodb-05-Jun-21?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 
 // const password = mC7yuJBnxiMXpF20
