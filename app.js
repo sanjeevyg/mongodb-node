@@ -48,3 +48,12 @@ client.connect(err => {
 // const textOut = `This s what we know about he avocado: ${textIn}.\nCreated on ${Date.now()}`;
 // fs.writeFileSync('./output.txt', textOut);
 // console.log('File written')
+
+app.delete('/posts', (request, response) => {
+    const id = request.params.id 
+    database('posts').where({id: id})
+        .delete()
+        .then(() => {
+            response.json({message: `post with ${id} is deleted!`})
+        })
+})
