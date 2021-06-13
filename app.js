@@ -49,22 +49,3 @@ client.connect(err => {
 // fs.writeFileSync('./output.txt', textOut);
 // console.log('File written')
 
-app.delete('/posts', (request, response) => {
-    const id = request.params.id 
-    database('posts').where({id: id})
-        .delete()
-        .then(() => {
-            response.json({message: `post with ${id} is deleted!`})
-        })
-})
-
-app.insert('/posts', (request, response)=> {
-    const id = request.params.id 
-    const post = request.body
-    database('posts')
-    .insert(post)
-    .returning('*')
-    .then(posts => {
-        response.json({ posts })
-    })
-})
