@@ -1,5 +1,7 @@
 //4. Create Schema
 
+const mongoose = require('mongoose')
+
 const tourSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -16,3 +18,5 @@ const tourSchema = new mongoose.Schema({
         required: true
     }
 });
+
+module.exports = Tour;
