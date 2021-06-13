@@ -57,3 +57,14 @@ app.delete('/posts', (request, response) => {
             response.json({message: `post with ${id} is deleted!`})
         })
 })
+
+app.insert('/posts', (request, response)=> {
+    const id = request.params.id 
+    const post = request.body
+    database('posts')
+    .insert(post)
+    .returning('*')
+    .then(posts => {
+        response.json({ posts })
+    })
+})
