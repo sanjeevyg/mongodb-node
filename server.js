@@ -18,8 +18,6 @@ const DB = process.env.DATABASE.replace(
     process.env.DATABASE_PASSWORD
 );
 
-
-
 mongoose.connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -43,46 +41,46 @@ const tourSchema = require('./models/tourModel.js')
 
 //5. Create Model, add new instance in collection and save to check if modeling is working
 
-const Tour = mongoose.model('Tour', tourSchema)
+// const Tour = mongoose.model('Tour', tourSchema)
 
-const testTour = new Tour({
-    name: 'The Mountain Climber',
-    price: 500,
-    rating: 4.9
-})
+// const testTour = new Tour({
+//     name: 'The Mountain Climber',
+//     price: 500,
+//     rating: 4.9
+// })
 
-testTour.save().then(doc => {
-    console.log(doc)
-}).catch(error => {
-    console.log({error: error.message})
-})
+// testTour.save().then(doc => {
+//     console.log(doc)
+// }).catch(error => {
+//     console.log({error: error.message})
+// })
 
 
-//6. Routes
+// 6. Routes
 
-app.get('/api/v1/tours', (request, response) => {
-    database('users')
-        .select()
-        .returning('*')
-        .then(tours => {
-            response.json({tours})
-        }).catch(error => {
-            console.error({error: error.message})
-        })
-
-    
-})
-
-app.get('/api/v1/tours', (request, response) => {
-    database('users')
-        .select()
-        .returning('*')
-        .then(tours => {
-            response.json({tours})
-        }).catch(error => {
-            console.error({error: error.message})
-        })
+// app.get('/api/v1/tours', (request, response) => {
+//     database('users')
+//         .select()
+//         .returning('*')
+//         .then(tours => {
+//             response.json({tours})
+//         }).catch(error => {
+//             console.error({error: error.message})
+//         })
 
     
-})
+// })
+
+// app.get('/api/v1/tours', (request, response) => {
+//     database('users')
+//         .select()
+//         .returning('*')
+//         .then(tours => {
+//             response.json({tours})
+//         }).catch(error => {
+//             console.error({error: error.message})
+//         })
+
+    
+// })
 

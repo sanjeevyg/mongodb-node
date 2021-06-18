@@ -19,24 +19,16 @@ const Tour = require('./..models/Model')
 
 exports.getAllTours = async (req, res) => {
     // console.log(req.requestTime);
-    try {
+    const newTour = await Tour.create(req.body);
 
-        const newTour = await Tour.create(req.body);
-        
-        res.status(201).json({
-            status: 'sucess',
-            // requestedAt: req.requestTime
-            // results: tours.length,
-            data: {
-                tours
-            }
-        })
-    } catch(err) {
-        res.status(400).json({
-            status: 'fail',
-            message: 'Invalid data sent!'
-        })
-    }
+    res.status(200).json({
+        status: 'sucess',
+        // requestedAt: req.requestTime
+        // results: tours.length,
+        // data: {
+        //     tours
+        // }
+    })
 }
 
 exports.getTour = (req, res) => {
@@ -54,12 +46,23 @@ exports.getTour = (req, res) => {
 };
 
 exports.createTour = (req, res) => {
-   res.status(200).json({
-       status: 'sucess',
-       data: {
-           tour: '<Updated tour here...>'
-       } 
-   });
+    try {
+        const newTour = await Tour.create(req.body);
+        
+        res.status(201).json({
+            status: 'sucess',
+            // requestedAt: req.requestTime
+            // results: tours.length,
+            data: {
+                tours
+            }
+        })
+    } catch(err) {
+        res.status(400).json({
+            status: 'fail',
+            message: 'Invalid data sent!'
+        })
+    }
 };
 
 exports.deteleTour = (req, res) => {
