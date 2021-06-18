@@ -1,5 +1,7 @@
 //4. Create Schema
 
+
+
 const mongoose = require('mongoose')
 
 const tourSchema = new mongoose.Schema({
@@ -18,6 +20,9 @@ const tourSchema = new mongoose.Schema({
         required: true
     }
 });
+
+
+//5. Create Model and export
 
 const Tour = mongoose.model('Tour, tourSchema')
 

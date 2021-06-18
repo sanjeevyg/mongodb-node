@@ -35,7 +35,7 @@ app.listen(port, () => {
 
 //4. Create Schema and import it
 
-const tourSchema = require('./models/tourModel.js')
+// const tourSchema = require('./models/tourModel.js')
 
 
 

@@ -1,5 +1,5 @@
 // const fs = require('fs');
-const Tour = require('./..models/Model')
+const Tour = require('./..models/tourModel')
 
 // const tours = JSON.parse(
 //     fs.readFileSync(`${_dirname}/../dev-data/data/tours-simple.json`)
@@ -64,6 +64,15 @@ exports.createTour = (req, res) => {
         })
     }
 };
+
+exports.updateTour = (req, res) => {
+    res.status(200).json({
+        status: 'success',
+        data: {
+            tour: '<updated tour here...>'
+        }
+    })
+}
 
 exports.deteleTour = (req, res) => {
     res.status(204).json({
