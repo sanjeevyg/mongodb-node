@@ -17,17 +17,26 @@ const Tour = require('./..models/Model')
 //     next();
 // };
 
-exports.getAllTours = (req, res) => {
-    console.log(req.requestTime);
+exports.getAllTours = async (req, res) => {
+    // console.log(req.requestTime);
+    try {
 
-    res.status(200).json({
-        status: 'sucess',
-        requestedAt: req.requestTime
-        // results: tours.length,
-        // data: {
-        //     tours
-        // }
-    })
+        const newTour = await Tour.create(req.body);
+        
+        res.status(201).json({
+            status: 'sucess',
+            // requestedAt: req.requestTime
+            // results: tours.length,
+            data: {
+                tours
+            }
+        })
+    } catch(err) {
+        res.status(400).json({
+            status: 'fail',
+            message: 'Invalid data sent!'
+        })
+    }
 }
 
 exports.getTour = (req, res) => {
@@ -36,12 +45,12 @@ exports.getTour = (req, res) => {
 
     // const tour = tours.find(el => el.id === id);
 
-    // res.status(200).json({
-    //     status: 'success',
-    //     data: {
-    //         tour
-    //     }
-    // });
+    res.status(200).json({
+        status: 'success',
+        data: {
+            tour
+        }
+    });
 };
 
 exports.createTour = (req, res) => {

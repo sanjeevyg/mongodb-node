@@ -35,6 +35,9 @@ app.listen(port, () => {
     console.log(`App running on port ${port}...`)
 });
 
+//4. Create Schema and import it
+
+const tourSchema = require('./models/tourModel.js')
 
 
 
@@ -43,9 +46,9 @@ app.listen(port, () => {
 const Tour = mongoose.model('Tour', tourSchema)
 
 const testTour = new Tour({
-    name: 'The Forest Hiker',
+    name: 'The Mountain Climber',
     price: 500,
-    rating: 5
+    rating: 4.9
 })
 
 testTour.save().then(doc => {
