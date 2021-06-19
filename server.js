@@ -3,10 +3,10 @@
 //1. import required modules and framework
 
 const express = require('express')
-const app = express()
+// const app = express()
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-// const app = require('./app.js');
+const app = require('./app.js');
 
 
 // 2. Connect to the database 

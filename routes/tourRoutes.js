@@ -1,4 +1,4 @@
-const express = require('experss');
+const express = require('express');
 const tourController =('./../controllers/tourController');
 
 const router = express.Router();
