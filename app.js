@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const morgan = require('morgan')
 const fs = require('fs')
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 )
+
+app.use(morgan('dev'))
 
 // app.use('/posts', () => {
 //     console.log('This is a middleware running!')
