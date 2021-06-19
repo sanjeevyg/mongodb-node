@@ -47,9 +47,9 @@ exports.getAllTours = async (req, res) => {
         status: 'sucess',
         // requestedAt: req.requestTime
         // results: tours.length,
-        // data: {
-            //     tours
-            // }
+        data: {
+                tours
+            }
     })
 }
 
