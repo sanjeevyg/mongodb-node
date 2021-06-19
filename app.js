@@ -24,7 +24,7 @@ app.use('/api/v1/users', userRouter);
 
 
 //route handlers to be edited 
-app.get('/api/v1/tours', (req, res) => {
+app.get('/', (req, res) => {
   res.status(200).json({
     status: 'success',
     results: tours.length,
@@ -52,8 +52,5 @@ app.post('/api/v1/tours', (req, res) => {
   })
   console.log('done')
 })
-
-
-
 
 module.exports = app
