@@ -1,8 +1,8 @@
-const Tour = require('./../models/tourModel')
+const Tour = require('./../models/tourModel');
 
 //1. Create Create Method
                 
-exports.createTour = (req, res) => {
+exports.createTour = async (req, res) => {
     try {
         const newTour = await Tour.create(req.body);
         
@@ -68,13 +68,25 @@ exports.getTour = async (req, res) => {
     }
 };
 
-exports.updateTour = (req, res) => {
-    res.status(200).json({
+exports.updateTour = async (req, res) => {
+    try { 
+        const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+            runValidators: ture
+        })
+
+        res.status(200).json({
         status: 'success',
         data: {
-            tour: '<updated tour here...>'
+            tour 
         }
-    })
+        }) 
+    } catch (err) {
+        res.status(404).json({
+            status: 'fail',
+            message: err
+        })
+    }
 }
 
 exports.deteleTour = (req, res) => {
