@@ -89,11 +89,11 @@ exports.updateTour = async (req, res) => {
     }
 }
 
-exports.deteleTour = (req, res) => {
-    res.status(204).json({
-        status: 'success',
-        data: null
-    });
-};
+// exports.deteleTour = (req, res) => {
+//     res.status(204).json({
+//         status: 'success',
+//         data: null
+//     });
+// };
 
 
