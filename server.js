@@ -3,7 +3,6 @@
 //1. import required modules and framework
 
 const express = require('express')
-// const app = express()
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const app = require('./app.js');
@@ -35,5 +34,4 @@ app.listen(port, () => {
 
 //4. Create Schema and import it
 
-// const tourSchema = require('./models/tourModel.js')
 
