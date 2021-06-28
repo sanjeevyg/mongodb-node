@@ -2,23 +2,23 @@ const Tour = require('./../models/tourModel');
 
 //1. Create Create Method
                 
-exports.createTour = async (req, res) => {
-    try {
-        const newTour = await Tour.create(req.body);
+// exports.createTour = async (req, res) => {
+//     try {
+//         const newTour = await Tour.create(req.body);
         
-        res.status(201).json({
-            status: 'success',
-            data: {
-                tour: newTour
-            }
-        })
-    } catch(err) {
-        res.status(400).json({
-            status: 'fail',
-            message: 'Invalid data sent!'
-        })
-    }
-};
+//         res.status(201).json({
+//             status: 'success',
+//             data: {
+//                 tour: newTour
+//             }
+//         })
+//     } catch(err) {
+//         res.status(400).json({
+//             status: 'fail',
+//             message: 'Invalid data sent!'
+//         })
+//     }
+// };
 
 exports.getAllTours = async (req, res) => {
     try {
