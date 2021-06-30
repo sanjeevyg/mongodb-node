@@ -1,6 +1,6 @@
 const Tour = require('./../models/tourModel');
 
-1. Create Create Method
+// 1. Create Create Method
                 
 exports.createTour = async (req, res) => {
     try {
