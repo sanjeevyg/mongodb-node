@@ -13,7 +13,7 @@ router
 router
     .route('/:id')
     .get(tourController.getTour)
-    .patch(tourController.udpateTour)
+    .get(tourController.updateTour)
     .delete(tourController.deleteTour)
 
 
